@@ -32,7 +32,17 @@ def cross_entropy_m(targets, predictions):
 args = (np.array([0, 1, 0, 1, 1]),
         np.array([0.001, 0.99, 0.001, 0.99, 0.99]))
 
-
+print("Приклад позитивних значень функції log loss  який свідчить про добре навчану модель")
 print(cross_entropy(*args))
 print(cross_entropy_m(*args))
 print(log_loss(*args))
+print("===========================")
+args = (np.array([0, 1, 0, 1, 1]),
+        np.array([0.99, 0.001, 0.99, 0.001, 0.001]))
+
+print("Погано навчана модель внизу, але її легко  виправити якщо  перевернути значення")
+print(cross_entropy(*args))
+print(cross_entropy_m(*args))
+print(log_loss(*args))
+
+print("Найгірші результати це середені, воно свідчать що модель не навчалась нічому")
