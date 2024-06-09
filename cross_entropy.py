@@ -1,7 +1,5 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from sklearn.metrics import log_loss
-
 """
 Cross entropy loss function
 """
@@ -29,3 +27,12 @@ def cross_entropy_m(targets, predictions):
         second_part = np.dot((1 - targets).T, np.log(1 - predictions))
         ce = -(first_part + second_part) / m
         return ce
+
+
+args = (np.array([0, 1, 0, 1, 1]),
+        np.array([0.001, 0.99, 0.001, 0.99, 0.99]))
+
+
+print(cross_entropy(*args))
+print(cross_entropy_m(*args))
+print(log_loss(*args))
